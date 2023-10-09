@@ -1,0 +1,9 @@
+{
+  "/env-config.js": {
+    "target": "http://localhost:4200",
+    "secure": false,
+    "pathRewrite": {
+      "^/env-config.js": "/assets/env-config.js"
+    }
+  }
+}

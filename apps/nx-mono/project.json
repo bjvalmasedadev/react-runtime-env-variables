@@ -47,8 +47,10 @@
     "serve": {
       "executor": "@nx/webpack:dev-server",
       "defaultConfiguration": "development",
+
       "options": {
         "buildTarget": "nx-mono:build",
+        "proxyConfig": "./proxy.conf.json",
         "hmr": true
       },
       "configurations": {

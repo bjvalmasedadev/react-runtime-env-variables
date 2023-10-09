@@ -1,12 +1,10 @@
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
-import styles from './app.module.scss';
-
-import NxWelcome from './nx-welcome';
-
+const apiUri = window._env_.APP_REACT_API_URI;
+const otra = window._env_.APP_REACT_OTRA;
 export function App() {
   return (
     <div>
-      <NxWelcome title="nx-mono" />
+      API: {apiUri} OTRA:{otra}
     </div>
   );
 }

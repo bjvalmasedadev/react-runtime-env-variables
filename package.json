@@ -2,7 +2,11 @@
   "name": "@nx-mono/source",
   "version": "0.0.0",
   "license": "MIT",
-  "scripts": {},
+  "scripts": {
+    "start": "npm run generate:config && nx serve nx-mono",
+    "build": "nx build nx-mono",
+    "generate:config": "./generate-config.sh ./apps/nx-mono/src/assets"
+  },
   "private": true,
   "dependencies": {
     "@swc/helpers": "~0.5.2",

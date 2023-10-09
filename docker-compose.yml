@@ -1,0 +1,9 @@
+version: '3.8'
+services:
+  web:
+    image: nx-app:0.0.3 # Asegúrate de reemplazar "my-app:latest" con el nombre y tag de tu imagen
+    ports:
+      - '3001:80'
+    environment:
+      - APP_REACT_API_URI=desdedocker-file
+      - APP_REACT_OTRA=desdedocker-file-otra
