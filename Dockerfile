@@ -8,8 +8,11 @@ RUN npm run build
 # Paso 2: Configurar Nginx
 FROM nginx:alpine
 COPY --from=build /usr/src/app/dist/apps/nx-mono /usr/share/nginx/html
-COPY --from=build /usr/src/app/generate-config.sh /usr/share/nginx/html/generate-config.sh
-RUN chmod +x /usr/share/nginx/html/generate-config.sh
+COPY  /generate-config.sh /script/generate-config.sh
+COPY entrypoint.sh /entrypoint.sh
+
+RUN chmod +x /script/generate-config.sh /entrypoint.sh
 COPY nginx.conf /etc/nginx/conf.d/default.conf
 EXPOSE 80
-CMD ["/bin/sh", "-c", "/usr/share/nginx/html/generate-config.sh /usr/share/nginx/html/ && nginx -g 'daemon off;'"]
+
+ENTRYPOINT [ "/entrypoint.sh" ]
